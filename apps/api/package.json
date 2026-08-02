@@ -1,0 +1,17 @@
+{
+  "name": "@ai-commerce/api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "uvicorn main:app --reload --host 0.0.0.0 --port 8000",
+    "build": "echo 'No build step for FastAPI, dependencies come from requirements.txt'",
+    "start": "uvicorn main:app --host 0.0.0.0 --port 8000",
+    "lint": "ruff check .",
+    "typecheck": "mypy .",
+    "test": "pytest",
+    "clean": "rm -rf __pycache__ .pytest_cache"
+  },
+  "comment": "This app is a Python/FastAPI service. Its actual dependencies live in requirements.txt and are installed with pip, not npm. This package.json only exists so npm workspaces and turbo can orchestrate its scripts alongside the rest of the monorepo.",
+  "dependencies": {},
+  "devDependencies": {}
+}

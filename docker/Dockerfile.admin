@@ -1,0 +1,39 @@
+
+# Build context for this Dockerfile MUST be the monorepo root so that npm
+# workspaces (apps/*, packages/*) and Turbo can resolve internal
+# dependencies such as @ai-commerce/ui, @ai-commerce/types and
+# @ai-commerce/shared.
+#
+#   docker build -f docker/Dockerfile.admin -t ai-commerce-admin .
+
+FROM node:18-alpine AS base
+
+# ---- Build the whole workspace, then let Turbo build only what @ai-commerce/admin needs ----
+FROM base AS builder
+WORKDIR /repo
+
+COPY . .
+RUN npm install
+RUN npx turbo run build --filter=@ai-commerce/admin...
+
+# ---- Production runtime image ----
+FROM base AS runner
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=3000
+
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+
+# Next.js "standalone" output (see apps/admin/next.config.js) traces only the
+# dependencies actually used at runtime, keeping the final image small.
+COPY --from=builder /repo/apps/admin/public ./apps/admin/public
+COPY --from=builder --chown=nextjs:nodejs /repo/apps/admin/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /repo/apps/admin/.next/static ./apps/admin/.next/static
+
+USER nextjs
+
+EXPOSE 3000
+
+CMD ["node", "apps/admin/server.js"]

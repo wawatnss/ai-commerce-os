@@ -1,0 +1,7 @@
+"""
+Repositories Module Initialization
+"""
+
+from .product_repository import ProductRepository
+
+__all__ = ["ProductRepository"]

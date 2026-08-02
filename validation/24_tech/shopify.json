@@ -1,0 +1,88 @@
+{
+  "overall_score": 74,
+  "checks": [
+    {
+      "key": "product",
+      "label": "Produits complets",
+      "status": "pass",
+      "score": 20,
+      "max_score": 20,
+      "message": "20/20 données produit"
+    },
+    {
+      "key": "variants",
+      "label": "Variantes",
+      "status": "fail",
+      "score": 0,
+      "max_score": 10,
+      "message": "Aucune variante trouvée"
+    },
+    {
+      "key": "navigation",
+      "label": "Navigation",
+      "status": "partial",
+      "score": 9,
+      "max_score": 10,
+      "message": "5 liens dans le menu"
+    },
+    {
+      "key": "collections",
+      "label": "Collections",
+      "status": "fail",
+      "score": 0,
+      "max_score": 10,
+      "message": "Aucune collection"
+    },
+    {
+      "key": "legal_pages",
+      "label": "Pages légales",
+      "status": "pass",
+      "score": 15,
+      "max_score": 15,
+      "message": "4/4 pages"
+    },
+    {
+      "key": "seo",
+      "label": "SEO",
+      "status": "pass",
+      "score": 15,
+      "max_score": 15,
+      "message": "SEO complet"
+    },
+    {
+      "key": "taxes",
+      "label": "Taxes",
+      "status": "fail",
+      "score": 0,
+      "max_score": 5,
+      "message": "Taxes non configurées"
+    },
+    {
+      "key": "shipping",
+      "label": "Politique de livraison",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "Frais: 50"
+    },
+    {
+      "key": "refund",
+      "label": "Politique de remboursement",
+      "status": "pass",
+      "score": 5,
+      "max_score": 5,
+      "message": "30 jours"
+    }
+  ],
+  "remaining_actions": [
+    "Ajouter les vraies variantes produit (taille, couleur, etc.)",
+    "Compléter la navigation principale (au moins 4 liens) et le footer",
+    "Créer au moins une collection Shopify (manuelle ou importée)",
+    "Configurer les taxes dans Shopify selon le pays de vente",
+    "Générer / uploader les vraies photos produit (Sprint 4)",
+    "Connecter un compte Shopify",
+    "Ajouter un moyen de paiement",
+    "Connecter un domaine"
+  ],
+  "is_ready": false
+}

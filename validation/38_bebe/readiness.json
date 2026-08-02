@@ -1,0 +1,87 @@
+{
+  "overall_score": 92,
+  "checks": [
+    {
+      "key": "brand",
+      "label": "Brand",
+      "status": "partial",
+      "score": 8,
+      "max_score": 10,
+      "message": "Tagline manquante"
+    },
+    {
+      "key": "homepage",
+      "label": "Homepage",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "4/4 sections clés"
+    },
+    {
+      "key": "product_page",
+      "label": "Product Page",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "Fiche produit structurée"
+    },
+    {
+      "key": "seo",
+      "label": "SEO",
+      "status": "pass",
+      "score": 15,
+      "max_score": 15,
+      "message": "SEO complet"
+    },
+    {
+      "key": "mobile",
+      "label": "Mobile",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "Menu mobile OK"
+    },
+    {
+      "key": "policies",
+      "label": "Policies",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "4/4 politiques"
+    },
+    {
+      "key": "navigation",
+      "label": "Navigation",
+      "status": "partial",
+      "score": 7,
+      "max_score": 10,
+      "message": "5 liens dans le menu"
+    },
+    {
+      "key": "conversion",
+      "label": "Conversion",
+      "status": "partial",
+      "score": 12,
+      "max_score": 15,
+      "message": "Score conversion 86/100"
+    },
+    {
+      "key": "accessibility",
+      "label": "Accessibility",
+      "status": "pass",
+      "score": 10,
+      "max_score": 10,
+      "message": "Score accessibilité 95/100"
+    }
+  ],
+  "remaining_actions": [
+    "Affiner le profil de marque (nom, description, tagline)",
+    "Compléter la navigation principale et le footer",
+    "Ajouter un vrai logo",
+    "Ajouter des photos produit",
+    "Connecter un domaine",
+    "Ajouter un moyen de paiement",
+    "Configurer les frais de livraison"
+  ],
+  "is_ready": true
+}

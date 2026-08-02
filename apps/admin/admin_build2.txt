@@ -1,0 +1,31 @@
+﻿
+> @ai-commerce/admin@0.1.0 build
+> next build
+
+  Γû▓ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ Γ£ô Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ Γ£ô Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                              Size     First Load JS
+Γöî ╞Æ /                                    175 B          96.1 kB
+Γö£ Γùï /_not-found                          873 B          88.1 kB
+Γöö Γùï /brands/new                          3.58 kB        99.5 kB
++ First Load JS shared by all            87.2 kB
+  Γö£ chunks/1dd3208c-0bef3885139748d4.js  53.6 kB
+  Γö£ chunks/528-93a5e4ece8d15f7a.js       31.7 kB
+  Γöö other shared chunks (total)          1.89 kB
+
+
+Γùï  (Static)   prerendered as static content
+╞Æ  (Dynamic)  server-rendered on demand
+

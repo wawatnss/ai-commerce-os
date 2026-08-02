@@ -1,0 +1,308 @@
+{
+  "store_id": 9,
+  "report": {
+    "conversion_score": 85.9,
+    "seo_score": 100.0,
+    "ux_score": 100.0,
+    "trust_score": 80.0,
+    "persuasion_score": 74.0,
+    "strengths": [
+      "Hero is well optimized (score 100/100)",
+      "Seo is well optimized (score 100/100)",
+      "Ux is well optimized (score 100/100)",
+      "Pricing is well optimized (score 100/100)"
+    ],
+    "weaknesses": [
+      "Product Page needs improvement (score 52/100)"
+    ],
+    "recommended_actions": [
+      {
+        "id": "product-page-missing-faq",
+        "optimizer": "product_page",
+        "severity": "high",
+        "title": "Add objection-handling FAQ entries",
+        "description": "Added 4 FAQ entries covering common purchase objections.",
+        "applied": true
+      },
+      {
+        "id": "reviews-missing-real-reviews",
+        "optimizer": "reviews",
+        "severity": "high",
+        "title": "Collect real customer reviews",
+        "description": "No reviews yet. Connect a review-collection tool (e.g. a post-purchase email) before launch. Never fabricate reviews for a real store.",
+        "applied": false
+      },
+      {
+        "id": "trust-missing-badges",
+        "optimizer": "trust",
+        "severity": "medium",
+        "title": "Add missing trust signals",
+        "description": "Added: Free Shipping, Easy 30-Day Returns.",
+        "applied": true
+      },
+      {
+        "id": "product-page-missing-benefits",
+        "optimizer": "product_page",
+        "severity": "medium",
+        "title": "Add product benefits",
+        "description": "Generated a benefits list from the store's trust signals.",
+        "applied": true
+      },
+      {
+        "id": "pricing-charm",
+        "optimizer": "pricing",
+        "severity": "medium",
+        "title": "Use charm pricing",
+        "description": "Price items at $X.99 or $X.97 instead of round numbers to increase perceived value.",
+        "applied": false
+      },
+      {
+        "id": "pricing-anchor",
+        "optimizer": "pricing",
+        "severity": "medium",
+        "title": "Add price anchoring",
+        "description": "Show a higher 'compare at' price next to the sale price to make the offer feel like a deal.",
+        "applied": false
+      },
+      {
+        "id": "product-page-missing-features",
+        "optimizer": "product_page",
+        "severity": "low",
+        "title": "Add product features",
+        "description": "Added a default feature list; replace with real specs once available.",
+        "applied": true
+      },
+      {
+        "id": "product-page-missing-comparison",
+        "optimizer": "product_page",
+        "severity": "low",
+        "title": "Add a competitive comparison",
+        "description": "Added a simple us-vs-typical-competitor comparison table.",
+        "applied": true
+      },
+      {
+        "id": "pricing-bundle",
+        "optimizer": "pricing",
+        "severity": "low",
+        "title": "Offer bundles",
+        "description": "Bundle complementary products at a slight discount to increase average order value.",
+        "applied": false
+      },
+      {
+        "id": "pricing-first-order-discount",
+        "optimizer": "pricing",
+        "severity": "low",
+        "title": "Consider a first-order discount",
+        "description": "A small first-purchase discount (5-10%) can reduce hesitation for new visitors.",
+        "applied": false
+      }
+    ],
+    "optimizer_results": [
+      {
+        "optimizer": "hero",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "headline": "Discover Hypergame controllerPro",
+          "cta": "Shop Now",
+          "section_order": [
+            "hero",
+            "features",
+            "testimonials",
+            "trust"
+          ]
+        }
+      },
+      {
+        "optimizer": "trust",
+        "score": 80.0,
+        "suggestions": [
+          {
+            "id": "trust-missing-badges",
+            "optimizer": "trust",
+            "severity": "medium",
+            "title": "Add missing trust signals",
+            "description": "Added: Free Shipping, Easy 30-Day Returns.",
+            "applied": true
+          }
+        ],
+        "details": {
+          "trust_badges": [
+            "Customer testimonials",
+            "Money-back guarantee",
+            "Secure checkout",
+            "Transparent pricing",
+            "Quality certifications",
+            "Free Shipping",
+            "Easy 30-Day Returns",
+            "Verified Customer Reviews"
+          ]
+        }
+      },
+      {
+        "optimizer": "product_page",
+        "score": 52.0,
+        "suggestions": [
+          {
+            "id": "product-page-missing-faq",
+            "optimizer": "product_page",
+            "severity": "high",
+            "title": "Add objection-handling FAQ entries",
+            "description": "Added 4 FAQ entries covering common purchase objections.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-benefits",
+            "optimizer": "product_page",
+            "severity": "medium",
+            "title": "Add product benefits",
+            "description": "Generated a benefits list from the store's trust signals.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-features",
+            "optimizer": "product_page",
+            "severity": "low",
+            "title": "Add product features",
+            "description": "Added a default feature list; replace with real specs once available.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-comparison",
+            "optimizer": "product_page",
+            "severity": "low",
+            "title": "Add a competitive comparison",
+            "description": "Added a simple us-vs-typical-competitor comparison table.",
+            "applied": true
+          }
+        ],
+        "details": {
+          "faq_count": 4,
+          "product_page": {
+            "benefits": [
+              "Fast, reliable shipping to your door",
+              "Risk-free with our money-back guarantee",
+              "100% secure checkout",
+              "Crafted with quality you can trust"
+            ],
+            "features": [
+              "Premium materials",
+              "Rigorous quality control",
+              "Ready to ship"
+            ],
+            "comparison": {
+              "us": {
+                "quality": "Premium",
+                "shipping": "Fast & tracked",
+                "support": "24/7",
+                "guarantee": "30-day money-back"
+              },
+              "typical_competitor": {
+                "quality": "Variable",
+                "shipping": "Slow",
+                "support": "Limited",
+                "guarantee": "None"
+              }
+            },
+            "cta": "Add to Cart"
+          }
+        }
+      },
+      {
+        "optimizer": "reviews",
+        "score": 70.0,
+        "suggestions": [
+          {
+            "id": "reviews-missing-real-reviews",
+            "optimizer": "reviews",
+            "severity": "high",
+            "title": "Collect real customer reviews",
+            "description": "No reviews yet. Connect a review-collection tool (e.g. a post-purchase email) before launch. Never fabricate reviews for a real store.",
+            "applied": false
+          }
+        ],
+        "details": {
+          "structure": {
+            "layout": "grid",
+            "show_rating_summary": true,
+            "show_verified_badge": true,
+            "allow_photos": true
+          },
+          "ugc_section_enabled": true,
+          "average_rating": null,
+          "review_count": 0,
+          "is_simulated": false
+        }
+      },
+      {
+        "optimizer": "seo",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "h1": "Discover Hypergame controllerPro",
+          "keywords": [
+            "gaming",
+            "quality",
+            "hypergame controllerpro",
+            "best",
+            "shop"
+          ]
+        }
+      },
+      {
+        "optimizer": "ux",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "section_count": 4,
+          "cta_variants": 1
+        }
+      },
+      {
+        "optimizer": "pricing",
+        "score": 100.0,
+        "suggestions": [
+          {
+            "id": "pricing-charm",
+            "optimizer": "pricing",
+            "severity": "medium",
+            "title": "Use charm pricing",
+            "description": "Price items at $X.99 or $X.97 instead of round numbers to increase perceived value.",
+            "applied": false
+          },
+          {
+            "id": "pricing-anchor",
+            "optimizer": "pricing",
+            "severity": "medium",
+            "title": "Add price anchoring",
+            "description": "Show a higher 'compare at' price next to the sale price to make the offer feel like a deal.",
+            "applied": false
+          },
+          {
+            "id": "pricing-bundle",
+            "optimizer": "pricing",
+            "severity": "low",
+            "title": "Offer bundles",
+            "description": "Bundle complementary products at a slight discount to increase average order value.",
+            "applied": false
+          },
+          {
+            "id": "pricing-first-order-discount",
+            "optimizer": "pricing",
+            "severity": "low",
+            "title": "Consider a first-order discount",
+            "description": "A small first-purchase discount (5-10%) can reduce hesitation for new visitors.",
+            "applied": false
+          }
+        ],
+        "details": {
+          "note": "Recommendations only - no prices were modified.",
+          "mutates_blueprint": false
+        }
+      }
+    ],
+    "generated_at": "2026-08-02T06:21:36.944764+00:00",
+    "demo_mode": false
+  },
+  "cached": true
+}

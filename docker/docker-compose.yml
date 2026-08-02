@@ -1,0 +1,96 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: ai-commerce-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ai_commerce}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ai_commerce_password}
+      POSTGRES_DB: ${POSTGRES_DB:-ai_commerce}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ai-commerce-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ai_commerce"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: ai-commerce-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - ai-commerce-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ../apps/api
+      dockerfile: ../../docker/Dockerfile.api
+    container_name: ai-commerce-api
+    environment:
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-ai_commerce}:${POSTGRES_PASSWORD:-ai_commerce_password}@postgres:5432/${POSTGRES_DB:-ai_commerce}
+      REDIS_URL: redis://redis:6379/0
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      SECRET_KEY: ${SECRET_KEY:-your-secret-key-here}
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - ai-commerce-network
+    volumes:
+      - ../apps/api:/app
+      - /app/__pycache__
+
+  web:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.web
+    container_name: ai-commerce-web
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    networks:
+      - ai-commerce-network
+
+  admin:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.admin
+    container_name: ai-commerce-admin
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:8000
+    ports:
+      - "3001:3000"
+    depends_on:
+      - api
+    networks:
+      - ai-commerce-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  ai-commerce-network:
+    driver: bridge

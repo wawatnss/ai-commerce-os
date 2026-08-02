@@ -1,0 +1,194 @@
+{
+  "compatibility": "shopify-v1",
+  "store_id": 27,
+  "generated_at": "2026-08-02T06:33:56.489795+00:00",
+  "store": {
+    "name": "Barkbuddy leashPro",
+    "description": "Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them.",
+    "email": "",
+    "currency": "USD",
+    "money_format": "${{amount}}",
+    "weight_unit": "kg",
+    "timezone": "UTC",
+    "taxes_included": false,
+    "taxes": []
+  },
+  "products": [
+    {
+      "handle": "barkbuddy-leashpro",
+      "title": "Barkbuddy leashPro",
+      "body_html": "Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them.",
+      "vendor": "Barkbuddy leashPro",
+      "product_type": "animaux",
+      "tags": [
+        "animaux",
+        "quality",
+        "barkbuddy leashpro",
+        "best",
+        "shop"
+      ],
+      "variants": [
+        {
+          "title": "Default Title",
+          "price": "29.99",
+          "sku": "DEFAULT-001",
+          "barcode": "",
+          "grams": 500,
+          "inventory_quantity": 100,
+          "requires_shipping": true,
+          "taxable": true,
+          "is_placeholder": true
+        }
+      ],
+      "images": [
+        {
+          "src": "",
+          "alt": "Barkbuddy leashPro",
+          "position": 1,
+          "is_placeholder": true
+        }
+      ],
+      "seo": {
+        "title": "Barkbuddy leashPro",
+        "description": "Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them."
+      }
+    }
+  ],
+  "collections": [
+    {
+      "handle": "all-products",
+      "title": "All Products",
+      "body_html": "",
+      "products": [
+        "barkbuddy-leashpro"
+      ],
+      "is_placeholder": true
+    }
+  ],
+  "pages": [
+    {
+      "handle": "refund-policy",
+      "title": "Refund Policy",
+      "body_html": "<h1>Refund Policy</h1><p><strong>Days:</strong> 30</p><p><strong>Conditions:</strong> Unused items, Original packaging, Within 30 days</p><p><strong>Process:</strong> Contact our support team within 30 days of purchase</p>",
+      "seo": {
+        "title": "Refund Policy",
+        "description": "<h1>Refund Policy</h1><p><strong>Days:</strong> 30</p><p><strong>Conditions:</strong> Unused items, Original packaging, Within 30 days</p><p><strong>Process:</strong> Contact our support team within 30 days of purchase</p>"
+      }
+    },
+    {
+      "handle": "shipping-policy",
+      "title": "Shipping Policy",
+      "body_html": "<h1>Shipping Policy</h1><p><strong>Free Shipping Threshold:</strong> 50</p><p><strong>Shipping Times:</strong> 5-7 business days, 2-3 business days</p><p><strong>International:</strong> Available</p>",
+      "seo": {
+        "title": "Shipping Policy",
+        "description": "<h1>Shipping Policy</h1><p><strong>Free Shipping Threshold:</strong> 50</p><p><strong>Shipping Times:</strong> 5-7 business days, 2-3 business days</p><p><strong>International:</strong> Available</p>"
+      }
+    },
+    {
+      "handle": "privacy-policy",
+      "title": "Privacy Policy",
+      "body_html": "<h1>Privacy Policy</h1><p><strong>Data Collection:</strong> Only necessary data</p><p><strong>Data Usage:</strong> To process orders and improve service</p><p><strong>Data Sharing:</strong> Never sold to third parties</p>",
+      "seo": {
+        "title": "Privacy Policy",
+        "description": "<h1>Privacy Policy</h1><p><strong>Data Collection:</strong> Only necessary data</p><p><strong>Data Usage:</strong> To process orders and improve service</p><p><strong>Data Sharing:</strong> Never sold to third parties</p>"
+      }
+    },
+    {
+      "handle": "terms-of-service",
+      "title": "Terms of Service",
+      "body_html": "<h1>Terms of Service</h1><p><strong>Age Restriction:</strong> 18</p><p><strong>Account Responsibility:</strong> Users are responsible for account security</p>",
+      "seo": {
+        "title": "Terms of Service",
+        "description": "<h1>Terms of Service</h1><p><strong>Age Restriction:</strong> 18</p><p><strong>Account Responsibility:</strong> Users are responsible for account security</p>"
+      }
+    }
+  ],
+  "menus": {
+    "main_menu": [
+      {
+        "title": "Home",
+        "url": "/"
+      },
+      {
+        "title": "Shop",
+        "url": "/shop"
+      },
+      {
+        "title": "About",
+        "url": "/about"
+      },
+      {
+        "title": "Contact",
+        "url": "/contact"
+      },
+      {
+        "title": "FAQ",
+        "url": "/faq"
+      }
+    ],
+    "footer": []
+  },
+  "global_seo": {
+    "title_template": "Barkbuddy leashPro | Best animaux | None",
+    "meta_description_template": "Discover the best animaux at Barkbuddy leashPro. Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them.. Shop now!",
+    "keywords": [
+      "animaux",
+      "quality",
+      "barkbuddy leashpro",
+      "best",
+      "shop"
+    ],
+    "open_graph": {
+      "og_title": "Barkbuddy leashPro | Best animaux | None",
+      "og_description": "Discover the best animaux at Barkbuddy leashPro. Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them.. Shop now!",
+      "og_type": "website",
+      "og_image": ""
+    },
+    "json_ld": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Barkbuddy leashPro",
+      "description": "Our mission is to put powerful tools in calm hands. Brand makes BarkBuddy Leash that feel inevitable once you use them.",
+      "slogan": null
+    }
+  },
+  "policies": {
+    "refund_policy": {
+      "title": "Refund Policy",
+      "days": 30,
+      "conditions": [
+        "Unused items",
+        "Original packaging",
+        "Within 30 days"
+      ],
+      "process": "Contact our support team within 30 days of purchase"
+    },
+    "shipping_policy": {
+      "title": "Shipping Policy",
+      "free_shipping_threshold": 50,
+      "shipping_times": {
+        "standard": "5-7 business days",
+        "express": "2-3 business days"
+      },
+      "international": "Available"
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy",
+      "data_collection": "Only necessary data",
+      "data_usage": "To process orders and improve service",
+      "data_sharing": "Never sold to third parties"
+    },
+    "terms_of_service": {
+      "title": "Terms of Service",
+      "age_restriction": 18,
+      "account_responsibility": "Users are responsible for account security"
+    }
+  },
+  "media": [],
+  "warnings": [
+    "Product variants are placeholders. Replace before launch.",
+    "Product images are placeholders. Generate/upload real images in Sprint 4.",
+    "Collections are placeholders. Replace with real collections before launch.",
+    "No tax configuration. Shopify will use default 0% until you configure taxes."
+  ]
+}

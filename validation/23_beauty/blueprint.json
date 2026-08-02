@@ -1,0 +1,982 @@
+{
+  "brand_profile_id": "23",
+  "product_id": "launch-e0b4190c",
+  "supplier_id": "launch-supplier-e0b4190c",
+  "store_name": "Purebloom tonerPro",
+  "store_description": "Beauty is personal. Brand formulates PureBloom Toner that adapt to your skin, your mood, your moment.",
+  "tagline": null,
+  "homepage": [
+    {
+      "section_type": "hero",
+      "title": null,
+      "content": {
+        "headline": "Discover Purebloom tonerPro",
+        "subheadline": "Beauty is personal. Brand formulates PureBloom Toner that adapt to your skin, your mood, your moment.",
+        "cta": "Purebloom tonerPro: Reveal Your Glow",
+        "background": "#2563EB"
+      },
+      "order": 0,
+      "enabled": true
+    },
+    {
+      "section_type": "features",
+      "title": "Why Choose Us",
+      "content": {
+        "features": [
+          "Superior quality materials",
+          "Innovative design",
+          "Customer Service"
+        ]
+      },
+      "order": 1,
+      "enabled": true
+    },
+    {
+      "section_type": "testimonials",
+      "title": "What Our Customers Say",
+      "content": {
+        "testimonial": "Great products and excellent service!",
+        "rating": 5
+      },
+      "order": 2,
+      "enabled": true
+    },
+    {
+      "section_type": "trust",
+      "title": "Trust Badges",
+      "content": {
+        "badges": [
+          "Customer testimonials",
+          "Money-back guarantee",
+          "Secure checkout",
+          "Transparent pricing",
+          "Quality certifications",
+          "Free Shipping",
+          "Easy 30-Day Returns",
+          "Verified Customer Reviews"
+        ]
+      },
+      "order": 3,
+      "enabled": true
+    }
+  ],
+  "navigation": {
+    "main_menu": [
+      {
+        "label": "Home",
+        "link": "/"
+      },
+      {
+        "label": "Shop",
+        "link": "/shop"
+      },
+      {
+        "label": "About",
+        "link": "/about"
+      },
+      {
+        "label": "Contact",
+        "link": "/contact"
+      },
+      {
+        "label": "FAQ",
+        "link": "/faq"
+      }
+    ],
+    "secondary_menu": [
+      {
+        "label": "Account",
+        "link": "/account"
+      },
+      {
+        "label": "Cart",
+        "link": "/cart"
+      }
+    ],
+    "mobile_menu": {
+      "hamburger": true,
+      "slide_from": "left"
+    }
+  },
+  "footer": {
+    "columns": [
+      {
+        "title": "About",
+        "links": [
+          {
+            "label": "Our Story",
+            "link": "/about"
+          },
+          {
+            "label": "Contact",
+            "link": "/contact"
+          }
+        ]
+      },
+      {
+        "title": "Customer Service",
+        "links": [
+          {
+            "label": "FAQ",
+            "link": "/faq"
+          },
+          {
+            "label": "Shipping",
+            "link": "/shipping"
+          },
+          {
+            "label": "Returns",
+            "link": "/returns"
+          }
+        ]
+      },
+      {
+        "title": "Connect",
+        "links": [
+          {
+            "label": "Instagram",
+            "link": ""
+          },
+          {
+            "label": "Facebook",
+            "link": "/facebook"
+          }
+        ]
+      }
+    ],
+    "copyright": "© 2026 Purebloom tonerPro. All rights reserved.",
+    "social_links": {
+      "instagram": true,
+      "facebook": true,
+      "twitter": true
+    }
+  },
+  "theme": {
+    "primary_color": "#2563EB",
+    "secondary_color": "#10B981",
+    "accent_color": "#F59E0B",
+    "background_color": "#FFFFFF",
+    "text_color": "#1F2937",
+    "border_radius": "8px",
+    "font_family": "Inter",
+    "button_style": "modern",
+    "card_style": "clean",
+    "spacing": "comfortable",
+    "animations_enabled": true,
+    "dark_mode_enabled": true,
+    "dark_colors": {
+      "background": "#111827",
+      "text": "#F9FAFB",
+      "primary": "#2563EB",
+      "secondary": "#10B981"
+    }
+  },
+  "seo": {
+    "title_template": "Purebloom tonerPro | Best beauty | None",
+    "meta_description_template": "Discover the best beauty at Purebloom tonerPro. Beauty is personal. Brand formulates PureBloom Toner that adapt to your skin, your mood, your moment.. Shop now!",
+    "keywords": [
+      "beauty",
+      "quality",
+      "purebloom tonerpro",
+      "best",
+      "shop"
+    ],
+    "open_graph_enabled": true,
+    "twitter_card_enabled": true,
+    "structured_data_enabled": true,
+    "h1": "Discover Purebloom tonerPro",
+    "h2_suggestions": [
+      "Why Choose Us",
+      "What Our Customers Say",
+      "Trust Badges"
+    ],
+    "open_graph": {
+      "og_title": "Purebloom tonerPro | Best beauty | None",
+      "og_description": "Discover the best beauty at Purebloom tonerPro. Beauty is personal. Brand formulates PureBloom Toner that adapt to your skin, your mood, your moment.. Shop now!",
+      "og_type": "website",
+      "og_image": ""
+    },
+    "json_ld": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Purebloom tonerPro",
+      "description": "Beauty is personal. Brand formulates PureBloom Toner that adapt to your skin, your mood, your moment.",
+      "slogan": null
+    },
+    "faq_schema": {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long does shipping take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard shipping takes 5-7 business days; express options are available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is your return policy?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We offer a 30-day return policy — Contact our support team within 30 days of purchase."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my payment information secure?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All payments are processed through encrypted, PCI-compliant checkout."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you ship internationally?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Standard shipping takes 5-7 business days; express options are available."
+          }
+        }
+      ]
+    }
+  },
+  "policies": {
+    "refund_policy": {
+      "title": "Refund Policy",
+      "days": 30,
+      "conditions": [
+        "Unused items",
+        "Original packaging",
+        "Within 30 days"
+      ],
+      "process": "Contact our support team within 30 days of purchase"
+    },
+    "shipping_policy": {
+      "title": "Shipping Policy",
+      "free_shipping_threshold": 50,
+      "shipping_times": {
+        "standard": "5-7 business days",
+        "express": "2-3 business days"
+      },
+      "international": "Available"
+    },
+    "privacy_policy": {
+      "title": "Privacy Policy",
+      "data_collection": "Only necessary data",
+      "data_usage": "To process orders and improve service",
+      "data_sharing": "Never sold to third parties"
+    },
+    "terms_of_service": {
+      "title": "Terms of Service",
+      "age_restriction": 18,
+      "account_responsibility": "Users are responsible for account security"
+    }
+  },
+  "collections": [],
+  "landing_pages": [],
+  "faq": [
+    {
+      "question": "Is the serum cruelty-free?",
+      "answer": "Yes, our products are certified cruelty-free and vegan.",
+      "category": "product"
+    },
+    {
+      "question": "How should I store the serum?",
+      "answer": "Keep it in a cool, dry place away from direct sunlight.",
+      "category": "care"
+    },
+    {
+      "question": "When will I see results?",
+      "answer": "Most users notice improvements after 2-3 weeks of daily use.",
+      "category": "product"
+    },
+    {
+      "question": "Can I use it with other products?",
+      "answer": "Yes, but patch test first when mixing active ingredients.",
+      "category": "care"
+    },
+    {
+      "question": "What is your return policy?",
+      "answer": "You can return unopened products within 30 days.",
+      "category": "returns"
+    }
+  ],
+  "about": {},
+  "contact": {},
+  "testimonials": [
+    "Customer testimonials",
+    "Money-back guarantee",
+    "Secure checkout",
+    "Transparent pricing",
+    "Quality certifications"
+  ],
+  "reviews": [],
+  "trust_badges": [
+    "Customer testimonials",
+    "Money-back guarantee",
+    "Secure checkout",
+    "Transparent pricing",
+    "Quality certifications",
+    "Free Shipping",
+    "Easy 30-Day Returns",
+    "Verified Customer Reviews"
+  ],
+  "hero_sections": [],
+  "banners": [],
+  "emails": {},
+  "social": {
+    "enabled": true
+  },
+  "export_config": {
+    "format": "json",
+    "platform": "agnostic"
+  },
+  "validation_result": {
+    "overall_score": 94.25,
+    "coherence_score": 100.0,
+    "seo_score": 100.0,
+    "ux_score": 95.0,
+    "accessibility_score": 95.0,
+    "responsive_score": 90.0,
+    "performance_score": 75.0,
+    "strengths": [
+      "Store has name and description",
+      "Homepage configured",
+      "SEO templates configured",
+      "Keywords defined",
+      "Navigation configured",
+      "Homepage sections defined",
+      "Dark mode supported",
+      "Font configured",
+      "Responsive spacing configured"
+    ],
+    "weaknesses": [],
+    "suggestions": [
+      "Consider disabling animations for better performance"
+    ]
+  },
+  "validation_score": 94.25,
+  "metadata": {
+    "brand_profile_id": "23",
+    "product_id": "launch-e0b4190c",
+    "supplier_id": "launch-supplier-e0b4190c",
+    "engines_used": [
+      "homepage",
+      "navigation",
+      "theme",
+      "seo",
+      "policy"
+    ],
+    "generated_at": "2026-08-02T06:31:00.213171"
+  },
+  "product_page": {
+    "benefits": [
+      "Purebloom tonerPro reveals your natural glow",
+      "Hydration that lasts all day",
+      "Purebloom tonerPro works with every skin type",
+      "Purebloom tonerPro absorbs in seconds"
+    ],
+    "features": [
+      "Slow-release actives",
+      "Dermatologist tested",
+      "Slow-release actives",
+      "No synthetic fragrances"
+    ],
+    "comparison": {
+      "us": {
+        "quality": "Premium",
+        "shipping": "Fast & tracked",
+        "support": "24/7",
+        "guarantee": "30-day money-back"
+      },
+      "typical_competitor": {
+        "quality": "Variable",
+        "shipping": "Slow",
+        "support": "Limited",
+        "guarantee": "None"
+      }
+    },
+    "cta": "Pamper Yourself with Purebloom tonerPro",
+    "category": "beauty",
+    "cta_variants": [
+      {
+        "label": "Purebloom tonerPro: Reveal Your Glow",
+        "context": "hero",
+        "predicted_score": 85.0,
+        "tone": "emotional"
+      },
+      {
+        "label": "Pamper Yourself with Purebloom tonerPro",
+        "context": "product",
+        "predicted_score": 75.0,
+        "tone": "indulgence"
+      },
+      {
+        "label": "Purebloom tonerPro Glow Tips Weekly",
+        "context": "newsletter",
+        "predicted_score": 75.0,
+        "tone": "community"
+      },
+      {
+        "label": "Limited Purebloom tonerPro Restock",
+        "context": "urgency",
+        "predicted_score": 75.0,
+        "tone": "scarcity"
+      },
+      {
+        "label": "Purebloom tonerPro Rated 4.9 by Beauty Experts",
+        "context": "trust",
+        "predicted_score": 75.0,
+        "tone": "social-proof"
+      },
+      {
+        "label": "Discover Purebloom tonerPro",
+        "context": "brand",
+        "predicted_score": 70.0,
+        "tone": "brand"
+      }
+    ]
+  },
+  "reviews_module": {
+    "structure": {
+      "layout": "grid",
+      "show_rating_summary": true,
+      "show_verified_badge": true,
+      "allow_photos": true
+    },
+    "ugc_section_enabled": true,
+    "average_rating": null,
+    "review_count": 0,
+    "is_simulated": false
+  },
+  "conversion_report": {
+    "conversion_score": 85.9,
+    "seo_score": 100.0,
+    "ux_score": 100.0,
+    "trust_score": 80.0,
+    "persuasion_score": 74.0,
+    "strengths": [
+      "Hero is well optimized (score 100/100)",
+      "Seo is well optimized (score 100/100)",
+      "Ux is well optimized (score 100/100)",
+      "Pricing is well optimized (score 100/100)"
+    ],
+    "weaknesses": [
+      "Product Page needs improvement (score 52/100)"
+    ],
+    "recommended_actions": [
+      {
+        "id": "product-page-missing-faq",
+        "optimizer": "product_page",
+        "severity": "high",
+        "title": "Add objection-handling FAQ entries",
+        "description": "Added 4 FAQ entries covering common purchase objections.",
+        "applied": true
+      },
+      {
+        "id": "reviews-missing-real-reviews",
+        "optimizer": "reviews",
+        "severity": "high",
+        "title": "Collect real customer reviews",
+        "description": "No reviews yet. Connect a review-collection tool (e.g. a post-purchase email) before launch. Never fabricate reviews for a real store.",
+        "applied": false
+      },
+      {
+        "id": "trust-missing-badges",
+        "optimizer": "trust",
+        "severity": "medium",
+        "title": "Add missing trust signals",
+        "description": "Added: Free Shipping, Easy 30-Day Returns.",
+        "applied": true
+      },
+      {
+        "id": "product-page-missing-benefits",
+        "optimizer": "product_page",
+        "severity": "medium",
+        "title": "Add product benefits",
+        "description": "Generated a benefits list from the store's trust signals.",
+        "applied": true
+      },
+      {
+        "id": "pricing-charm",
+        "optimizer": "pricing",
+        "severity": "medium",
+        "title": "Use charm pricing",
+        "description": "Price items at $X.99 or $X.97 instead of round numbers to increase perceived value.",
+        "applied": false
+      },
+      {
+        "id": "pricing-anchor",
+        "optimizer": "pricing",
+        "severity": "medium",
+        "title": "Add price anchoring",
+        "description": "Show a higher 'compare at' price next to the sale price to make the offer feel like a deal.",
+        "applied": false
+      },
+      {
+        "id": "product-page-missing-features",
+        "optimizer": "product_page",
+        "severity": "low",
+        "title": "Add product features",
+        "description": "Added a default feature list; replace with real specs once available.",
+        "applied": true
+      },
+      {
+        "id": "product-page-missing-comparison",
+        "optimizer": "product_page",
+        "severity": "low",
+        "title": "Add a competitive comparison",
+        "description": "Added a simple us-vs-typical-competitor comparison table.",
+        "applied": true
+      },
+      {
+        "id": "pricing-bundle",
+        "optimizer": "pricing",
+        "severity": "low",
+        "title": "Offer bundles",
+        "description": "Bundle complementary products at a slight discount to increase average order value.",
+        "applied": false
+      },
+      {
+        "id": "pricing-first-order-discount",
+        "optimizer": "pricing",
+        "severity": "low",
+        "title": "Consider a first-order discount",
+        "description": "A small first-purchase discount (5-10%) can reduce hesitation for new visitors.",
+        "applied": false
+      }
+    ],
+    "optimizer_results": [
+      {
+        "optimizer": "hero",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "headline": "Discover Purebloom tonerPro",
+          "cta": "Shop Now",
+          "section_order": [
+            "hero",
+            "features",
+            "testimonials",
+            "trust"
+          ]
+        }
+      },
+      {
+        "optimizer": "trust",
+        "score": 80.0,
+        "suggestions": [
+          {
+            "id": "trust-missing-badges",
+            "optimizer": "trust",
+            "severity": "medium",
+            "title": "Add missing trust signals",
+            "description": "Added: Free Shipping, Easy 30-Day Returns.",
+            "applied": true
+          }
+        ],
+        "details": {
+          "trust_badges": [
+            "Customer testimonials",
+            "Money-back guarantee",
+            "Secure checkout",
+            "Transparent pricing",
+            "Quality certifications",
+            "Free Shipping",
+            "Easy 30-Day Returns",
+            "Verified Customer Reviews"
+          ]
+        }
+      },
+      {
+        "optimizer": "product_page",
+        "score": 52.0,
+        "suggestions": [
+          {
+            "id": "product-page-missing-faq",
+            "optimizer": "product_page",
+            "severity": "high",
+            "title": "Add objection-handling FAQ entries",
+            "description": "Added 4 FAQ entries covering common purchase objections.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-benefits",
+            "optimizer": "product_page",
+            "severity": "medium",
+            "title": "Add product benefits",
+            "description": "Generated a benefits list from the store's trust signals.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-features",
+            "optimizer": "product_page",
+            "severity": "low",
+            "title": "Add product features",
+            "description": "Added a default feature list; replace with real specs once available.",
+            "applied": true
+          },
+          {
+            "id": "product-page-missing-comparison",
+            "optimizer": "product_page",
+            "severity": "low",
+            "title": "Add a competitive comparison",
+            "description": "Added a simple us-vs-typical-competitor comparison table.",
+            "applied": true
+          }
+        ],
+        "details": {
+          "faq_count": 4,
+          "product_page": {
+            "benefits": [
+              "Fast, reliable shipping to your door",
+              "Risk-free with our money-back guarantee",
+              "100% secure checkout",
+              "Crafted with quality you can trust"
+            ],
+            "features": [
+              "Premium materials",
+              "Rigorous quality control",
+              "Ready to ship"
+            ],
+            "comparison": {
+              "us": {
+                "quality": "Premium",
+                "shipping": "Fast & tracked",
+                "support": "24/7",
+                "guarantee": "30-day money-back"
+              },
+              "typical_competitor": {
+                "quality": "Variable",
+                "shipping": "Slow",
+                "support": "Limited",
+                "guarantee": "None"
+              }
+            },
+            "cta": "Add to Cart"
+          }
+        }
+      },
+      {
+        "optimizer": "reviews",
+        "score": 70.0,
+        "suggestions": [
+          {
+            "id": "reviews-missing-real-reviews",
+            "optimizer": "reviews",
+            "severity": "high",
+            "title": "Collect real customer reviews",
+            "description": "No reviews yet. Connect a review-collection tool (e.g. a post-purchase email) before launch. Never fabricate reviews for a real store.",
+            "applied": false
+          }
+        ],
+        "details": {
+          "structure": {
+            "layout": "grid",
+            "show_rating_summary": true,
+            "show_verified_badge": true,
+            "allow_photos": true
+          },
+          "ugc_section_enabled": true,
+          "average_rating": null,
+          "review_count": 0,
+          "is_simulated": false
+        }
+      },
+      {
+        "optimizer": "seo",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "h1": "Discover Purebloom tonerPro",
+          "keywords": [
+            "beauty",
+            "quality",
+            "purebloom tonerpro",
+            "best",
+            "shop"
+          ]
+        }
+      },
+      {
+        "optimizer": "ux",
+        "score": 100.0,
+        "suggestions": [],
+        "details": {
+          "section_count": 4,
+          "cta_variants": 1
+        }
+      },
+      {
+        "optimizer": "pricing",
+        "score": 100.0,
+        "suggestions": [
+          {
+            "id": "pricing-charm",
+            "optimizer": "pricing",
+            "severity": "medium",
+            "title": "Use charm pricing",
+            "description": "Price items at $X.99 or $X.97 instead of round numbers to increase perceived value.",
+            "applied": false
+          },
+          {
+            "id": "pricing-anchor",
+            "optimizer": "pricing",
+            "severity": "medium",
+            "title": "Add price anchoring",
+            "description": "Show a higher 'compare at' price next to the sale price to make the offer feel like a deal.",
+            "applied": false
+          },
+          {
+            "id": "pricing-bundle",
+            "optimizer": "pricing",
+            "severity": "low",
+            "title": "Offer bundles",
+            "description": "Bundle complementary products at a slight discount to increase average order value.",
+            "applied": false
+          },
+          {
+            "id": "pricing-first-order-discount",
+            "optimizer": "pricing",
+            "severity": "low",
+            "title": "Consider a first-order discount",
+            "description": "A small first-purchase discount (5-10%) can reduce hesitation for new visitors.",
+            "applied": false
+          }
+        ],
+        "details": {
+          "note": "Recommendations only - no prices were modified.",
+          "mutates_blueprint": false
+        }
+      }
+    ],
+    "generated_at": "2026-08-02T06:31:04.253621+00:00",
+    "demo_mode": false
+  },
+  "faq_diversity_score": 85.2,
+  "brand_asset_pack": {
+    "branding": {
+      "logo_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 120 120\" width=\"120\" height=\"120\" role=\"img\" aria-label=\"Purebloom tonerPro logo\"><rect x=\"10\" y=\"10\" width=\"100\" height=\"100\" rx=\"24\" fill=\"#2563EB\"/><text x=\"60\" y=\"74\" font-family=\"Inter, sans-serif\" font-size=\"40\" font-weight=\"700\" fill=\"#10B981\" text-anchor=\"middle\">PT</text></svg>",
+      "favicon_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\" width=\"64\" height=\"64\"><rect width=\"64\" height=\"64\" rx=\"14\" fill=\"#2563EB\"/><text x=\"32\" y=\"42\" font-family=\"Inter, sans-serif\" font-size=\"26\" font-weight=\"700\" fill=\"#FFFFFF\" text-anchor=\"middle\">P</text></svg>",
+      "palette": [
+        {
+          "name": "Primary",
+          "hex": "#2563EB",
+          "usage": "CTA, headers, trust"
+        },
+        {
+          "name": "Secondary",
+          "hex": "#10B981",
+          "usage": "Benefits, accents"
+        },
+        {
+          "name": "Accent",
+          "hex": "#F59E0B",
+          "usage": "Highlights, urgency"
+        },
+        {
+          "name": "Dark",
+          "hex": "#1F2937",
+          "usage": "Text"
+        },
+        {
+          "name": "Light",
+          "hex": "#FFFFFF",
+          "usage": "Backgrounds"
+        }
+      ],
+      "icons": {
+        "style": "filled",
+        "recommended": [
+          "sparkles",
+          "flower",
+          "droplet",
+          "heart"
+        ]
+      },
+      "typography": {
+        "heading": "Bodoni Moda",
+        "body": "Montserrat",
+        "accent": "Great Vibes",
+        "note": "Elegant and premium"
+      }
+    },
+    "store": {
+      "hero_banner": {
+        "name": "hero_banner",
+        "prompt": "Candid lifestyle moment of 16:9 beauty hero banner for Purebloom tonerPro featuring Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B. High-end brand imagery.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "16:9",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "category_banner": {
+        "name": "category_banner",
+        "prompt": "Candid lifestyle moment of 16:9 beauty collection banner for Purebloom tonerPro with Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "16:9",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "newsletter_banner": {
+        "name": "newsletter_banner",
+        "prompt": "Candid lifestyle moment of 3:1 newsletter header for Purebloom tonerPro announcing Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "3:1",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      }
+    },
+    "product": {
+      "product_hero": {
+        "name": "product_hero",
+        "prompt": "Candid lifestyle moment of 1:1 product hero of Purebloom tonerPro by Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B. Sharp, commercial quality.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "1:1",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "lifestyle": {
+        "name": "lifestyle",
+        "prompt": "Candid lifestyle moment of beauty lifestyle scene with Purebloom tonerPro from Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "4:3",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "packshot": {
+        "name": "packshot",
+        "prompt": "Candid lifestyle moment of 1:1 packshot of Purebloom tonerPro by Purebloom tonerPro on white. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "1:1",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "mockup": {
+        "name": "mockup",
+        "prompt": "Candid lifestyle moment of 4:3 mockup of Purebloom tonerPro by Purebloom tonerPro in context. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "4:3",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      }
+    },
+    "marketing": {
+      "instagram_post": {
+        "name": "instagram_post",
+        "prompt": "Candid lifestyle moment of 1:1 Instagram post for Purebloom tonerPro with Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B. Social-first, thumb-stopping.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "1:1",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "tiktok_cover": {
+        "name": "tiktok_cover",
+        "prompt": "Candid lifestyle moment of 9:16 TikTok cover for Purebloom tonerPro with Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B. Bold typography-safe space.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "9:16",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "pinterest": {
+        "name": "pinterest",
+        "prompt": "Candid lifestyle moment of 2:3 Pinterest pin for Purebloom tonerPro showing Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "2:3",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "facebook_cover": {
+        "name": "facebook_cover",
+        "prompt": "Candid lifestyle moment of 16:9 Facebook cover for Purebloom tonerPro with Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B. Wide, cinematic brand feel.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "16:9",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      },
+      "email_header": {
+        "name": "email_header",
+        "prompt": "Candid lifestyle moment of 3:1 email header for Purebloom tonerPro with Purebloom tonerPro. Natural soft diffused, minimal vibe, marble surface, composed as tight crop, shot slightly above. Color palette: #2563EB, #10B981, #F59E0B.",
+        "negative_prompt": "blurry, distorted text, watermark, low quality, inconsistent style, off-brand colors, noisy background, bad anatomy, duplicate elements",
+        "aspect_ratio": "3:1",
+        "style_tags": [
+          "lifestyle",
+          "minimal",
+          "soft diffused",
+          "tight crop",
+          "marble surface",
+          "slightly above"
+        ]
+      }
+    },
+    "source_palette": "theme+beauty"
+  }
+}
