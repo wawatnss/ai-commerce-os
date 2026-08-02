@@ -5,7 +5,7 @@ This module contains versioned templates for different store pages.
 All templates are externalized and easily replaceable.
 """
 
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 from pydantic import BaseModel, Field
 
 

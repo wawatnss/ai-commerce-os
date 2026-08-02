@@ -47,12 +47,12 @@ class StoreCache:
         except Exception:
             return False
     
-    def get_store(self, product_id: str) -> Optional[Dict]:
+    def get_store(self, product_id: str) -> Optional[dict[str, Any]]:
         """Get a store blueprint from cache."""
         key = f"store:{product_id}"
         return self.get(key)
     
-    def set_store(self, product_id: str, store: Dict, ttl: Optional[int] = None) -> bool:
+    def set_store(self, product_id: str, store: dict[str, Any], ttl: Optional[int] = None) -> bool:
         """Cache a store blueprint."""
         key = f"store:{product_id}"
         return self.set(key, store, ttl)

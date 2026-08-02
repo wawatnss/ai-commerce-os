@@ -47,12 +47,12 @@ class BrandCache:
         except Exception:
             return False
     
-    def get_brand(self, product_id: str) -> Optional[Dict]:
+    def get_brand(self, product_id: str) -> Optional[dict[str, Any]]:
         """Get a brand profile from cache."""
         key = f"brand:{product_id}"
         return self.get(key)
     
-    def set_brand(self, product_id: str, brand: Dict, ttl: Optional[int] = None) -> bool:
+    def set_brand(self, product_id: str, brand: dict[str, Any], ttl: Optional[int] = None) -> bool:
         """Cache a brand profile."""
         key = f"brand:{product_id}"
         return self.set(key, brand, ttl)
