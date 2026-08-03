@@ -184,7 +184,7 @@ class TestMockProvider:
     
     def test_validate_invalid_item_scores(self, provider):
         """Test validation fails with invalid scores."""
-        item = TrendItem(
+        item = TrendItem.model_construct(
             id="test_1",
             source="mock",
             product_name="Test Product",
@@ -193,9 +193,10 @@ class TestMockProvider:
             growth_score=80.0,
             competition_score=50.0,
             opportunity_score=70.0,
-            confidence_score=85.0
+            confidence_score=85.0,
+            detected_at=datetime.utcnow(),
         )
-        
+
         assert provider.validate(item) is False
     
     def test_validate_invalid_item_future_date(self, provider):

@@ -62,15 +62,25 @@ async def generate_store(
     service: StoreService = Depends(get_store_service)
 ):
     """Generate a complete store blueprint."""
+    billing = BillingService(service.db) if current_user else None
     if current_user:
         request.user_id = current_user.id
-        billing = BillingService(service.db)
         if not billing.can_create_store(current_user.id):
             raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail="Store limit reached for your plan")
+        if not billing.can_generate(current_user.id, use_ai=request.use_ai):
+            remaining_credits = billing.remaining_ai_credits(current_user.id)
+            if request.use_ai and remaining_credits != -1 and remaining_credits <= 0:
+                detail = "AI credit limit reached for your plan"
+            else:
+                detail = "Generation limit reached for your plan"
+            raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail=detail)
     try:
-        return await service.generate_store(request)
+        result = await service.generate_store(request)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+    if current_user:
+        billing.record_generation(current_user.id, use_ai=request.use_ai)
+    return result
 
 
 @router.get("/{store_id}", response_model=StoreResponse)
@@ -138,10 +148,17 @@ async def export_store(
 ):
     """Export a complete store blueprint as platform-agnostic JSON."""
     _get_authorized_store(store_id, current_user, service)
+    if current_user:
+        billing = BillingService(service.db)
+        if not billing.can_export(current_user.id):
+            raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail="Export limit reached for your plan")
     try:
-        return service.export_store(store_id)
+        result = service.export_store(store_id)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+    if current_user:
+        billing.record_export(current_user.id)
+    return result
 
 
 @router.delete("/{store_id}")
@@ -272,9 +289,16 @@ async def export_shopify(
 ):
     """Download a Shopify-compatible export file for a store."""
     store = _get_authorized_store(store_id, current_user, service)
+    if current_user:
+        billing = BillingService(service.db)
+        if not billing.can_export(current_user.id):
+            raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail="Export limit reached for your plan")
 
     payload = ShopifyExportEngine().run(store.blueprint_json or {}, store_id)
     body = json.dumps(payload, indent=2, default=str, ensure_ascii=False)
+
+    if current_user:
+        billing.record_export(current_user.id)
 
     return Response(
         content=body,

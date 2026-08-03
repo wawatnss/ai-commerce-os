@@ -47,7 +47,7 @@ def db_session(in_memory_db):
 @pytest.fixture
 def mock_cache():
     """Create a mock cache for testing."""
-    with patch('app.trend_intelligence.cache.redis.from_url'):
+    with patch('app.trend_intelligence.cache.redis_cache.redis.from_url'):
         cache = TrendCache()
         return cache
 

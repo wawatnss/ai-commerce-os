@@ -41,4 +41,15 @@ async def generate_launch(
             status_code=status.HTTP_402_PAYMENT_REQUIRED,
             detail="Store limit reached for your plan. Please upgrade."
         )
-    return await service.generate(request, current_user.id)
+    # The launch pipeline currently always generates its brand/store steps
+    # with use_ai=False internally (see LaunchService.generate), so this
+    # only needs to consume a generation slot, not AI credits.
+    if not billing.can_generate(current_user.id, use_ai=False):
+        raise HTTPException(
+            status_code=status.HTTP_402_PAYMENT_REQUIRED,
+            detail="Generation limit reached for your plan. Please upgrade."
+        )
+    result = await service.generate(request, current_user.id)
+    if result.success:
+        billing.record_generation(current_user.id, use_ai=False)
+    return result

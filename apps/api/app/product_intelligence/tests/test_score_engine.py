@@ -4,6 +4,8 @@ Unit Tests for Product Score Engine
 Tests the product scoring engine and score calculation.
 """
 
+import logging
+
 import pytest
 import sys
 import os
@@ -11,6 +13,7 @@ import os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
 from app.product_intelligence.engines import ProductScoreEngine, ScoreWeights
+from app.product_intelligence.rules import get_registry, CompetitionRule
 
 
 class TestProductScoreEngine:
@@ -94,6 +97,112 @@ class TestProductScoreEngine:
         
         # Should have some strengths or weaknesses
         assert len(result.strengths) + len(result.weaknesses) > 0
+
+
+class TestProductScoreEngineRegressions:
+    """Regression tests for RC1: RuleRegistry.get_rule() used to raise
+    `TypeError: BaseRule.__init__() got an unexpected keyword argument
+    'enabled'` on every single call, which ProductScoreEngine.analyze()
+    silently swallowed (`except Exception: continue`, no logging). The net
+    effect was that every product analysis returned overall_score=0,
+    recommendation=AVOID, and rule_results={}, with no error raised or
+    logged anywhere - a silent, total outage of this feature.
+    """
+
+    TREND_DATA = {
+        "product_name": "Test Product",
+        "category": "electronics",
+        "popularity_score": 80,
+        "growth_score": 75,
+        "competition_score": 40,
+        "opportunity_score": 70,
+        "confidence_score": 85,
+    }
+
+    def test_rules_actually_execute(self):
+        """Every registered rule must run and contribute a result - this is
+        the core RC1 regression: previously every rule call raised and was
+        silently skipped, leaving rule_results empty."""
+        engine = ProductScoreEngine()
+        registered_rule_count = len(get_registry().list_rules())
+
+        result = engine.analyze(self.TREND_DATA)
+
+        assert registered_rule_count > 0
+        assert len(result.rule_results) == registered_rule_count
+        assert result.metadata["rules_evaluated"] == registered_rule_count
+        assert result.metadata["failed_rules"] == []
+        assert result.metadata["skipped_rules"] == []
+
+    def test_scoring_returns_meaningful_values_again(self):
+        """The overall score/confidence must reflect the actual rules, not
+        the all-zero fallback produced when every rule silently failed."""
+        engine = ProductScoreEngine()
+
+        result = engine.analyze(self.TREND_DATA)
+
+        assert result.overall_score > 0
+        assert result.metadata["total_weight"] > 0
+        assert result.rule_results != {}
+
+    def test_disabled_rules_are_skipped_intentionally(self):
+        """A disabled rule must never be evaluated and must not appear in
+        rule_results, but every other rule must still run normally."""
+        engine = ProductScoreEngine(disabled_rules={"competition"})
+
+        result = engine.analyze(self.TREND_DATA)
+
+        assert "competition" not in result.rule_results
+        assert "competition" in result.metadata["skipped_rules"]
+        assert "competition" not in result.metadata["failed_rules"]
+        # Every other registered rule still ran.
+        other_rules = [r for r in get_registry().list_rules() if r != "competition"]
+        for rule_name in other_rules:
+            assert rule_name in result.rule_results
+
+    def test_disabled_rule_evaluate_is_never_called(self, monkeypatch):
+        """Belt-and-suspenders check that a disabled rule's evaluate() is
+        never invoked at all, not just filtered out of the results."""
+        calls = []
+        original_evaluate = CompetitionRule.evaluate
+
+        def _tracking_evaluate(self, trend_data):
+            calls.append(self.rule_name)
+            return original_evaluate(self, trend_data)
+
+        monkeypatch.setattr(CompetitionRule, "evaluate", _tracking_evaluate)
+
+        engine = ProductScoreEngine(disabled_rules={"competition"})
+        engine.analyze(self.TREND_DATA)
+
+        assert calls == []
+
+    def test_rule_exceptions_are_logged_not_silently_swallowed(self, monkeypatch, caplog):
+        """A rule that raises during evaluate() must be logged (with
+        exc_info) and excluded from the result - but must never crash the
+        whole analysis or vanish without a trace, per the RC1 fix
+        requirement to stop silently ignoring rule failures."""
+
+        def _boom(self, trend_data):
+            raise RuntimeError("synthetic rule failure for regression test")
+
+        monkeypatch.setattr(CompetitionRule, "evaluate", _boom)
+
+        engine = ProductScoreEngine()
+        with caplog.at_level(logging.ERROR, logger="ai_commerce"):
+            result = engine.analyze(self.TREND_DATA)
+
+        assert "competition" not in result.rule_results
+        assert "competition" in result.metadata["failed_rules"]
+        # The other 10 rules must still have executed normally.
+        assert len(result.rule_results) == len(get_registry().list_rules()) - 1
+
+        logged_messages = [record.getMessage() for record in caplog.records]
+        assert any("competition" in msg and "failed" in msg for msg in logged_messages)
+        # logger.exception() must have captured the actual traceback, not
+        # just a bare message.
+        exception_records = [r for r in caplog.records if r.exc_info is not None]
+        assert any("synthetic rule failure" in str(r.exc_info[1]) for r in exception_records)
 
 
 class TestScoreWeights:

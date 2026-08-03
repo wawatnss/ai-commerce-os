@@ -16,6 +16,7 @@ from app.product_intelligence.rules import (
     EstimatedMarginRule,
     DemandRule,
     CompetitionRule,
+    SeasonalityRule,
     get_registry
 )
 
@@ -151,3 +152,45 @@ class TestRuleRegistry:
         rule.set_weight(0.20)
         
         assert rule.get_weight() == 0.20
+
+    def test_get_rule_defaults_to_enabled(self):
+        """Regression test (RC1): get_rule() must not raise, and a rule
+        fetched without an explicit `enabled` argument must be enabled."""
+        registry = get_registry()
+
+        rule = registry.get_rule("estimated_margin", weight=0.15)
+
+        assert rule.is_enabled() is True
+
+    def test_get_rule_can_be_fetched_disabled(self):
+        """Regression test (RC1): RuleRegistry.get_rule(enabled=False) must
+        actually produce a disabled rule instance, not raise a TypeError."""
+        registry = get_registry()
+
+        rule = registry.get_rule("seasonality", weight=0.08, enabled=False)
+
+        assert isinstance(rule, SeasonalityRule)
+        assert rule.is_enabled() is False
+
+
+class TestBaseRuleEnabled:
+    """Tests for BaseRule's enabled/disabled state (RC1 regression)."""
+
+    def test_enabled_by_default(self):
+        rule = EstimatedMarginRule(weight=0.15)
+
+        assert rule.is_enabled() is True
+
+    def test_can_be_constructed_disabled(self):
+        rule = EstimatedMarginRule(weight=0.15, enabled=False)
+
+        assert rule.is_enabled() is False
+
+    def test_set_enabled_toggles_state(self):
+        rule = EstimatedMarginRule(weight=0.15)
+
+        rule.set_enabled(False)
+        assert rule.is_enabled() is False
+
+        rule.set_enabled(True)
+        assert rule.is_enabled() is True

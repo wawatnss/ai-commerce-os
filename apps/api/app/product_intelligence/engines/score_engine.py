@@ -5,10 +5,13 @@ This module implements the scoring engine that orchestrates rules and generates
 comprehensive product intelligence reports.
 """
 
-from typing import Dict, Any, List, Optional
+import logging
+from typing import Dict, Any, List, Optional, Set
 from pydantic import BaseModel, Field
 from ..rules import get_registry, RuleResult
 from ..schemas.product import Recommendation
+
+logger = logging.getLogger("ai_commerce")
 
 
 class ScoreWeights(BaseModel):
@@ -55,15 +58,19 @@ class ProductScoreEngine:
     Orchestrates multiple rules to generate comprehensive product evaluations.
     """
     
-    def __init__(self, weights: Optional[ScoreWeights] = None):
+    def __init__(self, weights: Optional[ScoreWeights] = None, disabled_rules: Optional[Set[str]] = None):
         """
         Initialize the scoring engine.
         
         Args:
             weights: Optional custom weights
+            disabled_rules: Optional set of rule names (as registered in the
+                rule registry, e.g. "seasonality") to skip entirely for
+                every `analyze()` call made by this engine instance.
         """
         self.weights = weights or ScoreWeights()
         self.registry = get_registry()
+        self.disabled_rules = disabled_rules or set()
     
     def analyze(self, trend_data: Dict[str, Any]) -> ProductScoreResult:
         """
@@ -96,9 +103,20 @@ class ProductScoreEngine:
         }
         
         # Evaluate each rule
+        skipped_rules = []
+        failed_rules = []
         for rule_name in self.registry.list_rules():
+            is_enabled = rule_name not in self.disabled_rules
             try:
-                rule = self.registry.get_rule(rule_name, weight=weight_map.get(rule_name, 0.1))
+                rule = self.registry.get_rule(
+                    rule_name, weight=weight_map.get(rule_name, 0.1), enabled=is_enabled
+                )
+
+                if not rule.is_enabled():
+                    logger.info("Skipping disabled rule '%s'", rule_name)
+                    skipped_rules.append(rule_name)
+                    continue
+
                 result = rule.evaluate(trend_data)
                 
                 rule_results[rule_name] = result.dict()
@@ -108,8 +126,13 @@ class ProductScoreEngine:
                 total_weighted_score += weighted_score
                 total_weight += rule.get_weight()
                 
-            except Exception as e:
-                # Log error in production
+            except Exception:
+                # A single rule failing must never be silently swallowed -
+                # log it with the full traceback and keep scoring with
+                # whichever rules did succeed, rather than crashing the
+                # entire analysis or hiding the failure.
+                logger.exception("Rule '%s' failed during product analysis; skipping it", rule_name)
+                failed_rules.append(rule_name)
                 continue
         
         # Calculate overall score
@@ -140,7 +163,9 @@ class ProductScoreEngine:
             metadata={
                 "total_weight": total_weight,
                 "rules_evaluated": len(rule_results),
-                "weights_used": weight_map
+                "weights_used": weight_map,
+                "skipped_rules": skipped_rules,
+                "failed_rules": failed_rules,
             }
         )
     

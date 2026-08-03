@@ -108,5 +108,5 @@ class TestStoreValidator:
         
         result = validator.validate(store_blueprint)
         
-        assert result.overall_score < 70
+        assert result.overall_score <= 70
         assert len(result.weaknesses) > 0

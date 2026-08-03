@@ -4,10 +4,13 @@ REST API Router for Brand Builder
 This module provides FastAPI endpoints for brand generation operations.
 """
 
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 from typing import Optional
 
+from app.auth.dependencies import get_current_user_optional
+from app.auth.models import User
+from app.billing.service import BillingService
 from database import get_db
 from ..services.brand_service import BrandService
 from ..schemas.brand import BrandCreateRequest, BrandResponse, ValidationResponse
@@ -23,13 +26,26 @@ def get_brand_service(db: Session = Depends(get_db)) -> BrandService:
 @router.post("/generate", response_model=BrandResponse)
 async def generate_brand(
     request: BrandCreateRequest,
+    current_user: Optional[User] = Depends(get_current_user_optional),
     service: BrandService = Depends(get_brand_service)
 ):
     """Generate a complete brand profile."""
+    billing = BillingService(service.db) if current_user else None
+    if current_user:
+        if not billing.can_generate(current_user.id, use_ai=request.use_ai):
+            remaining_credits = billing.remaining_ai_credits(current_user.id)
+            if request.use_ai and remaining_credits != -1 and remaining_credits <= 0:
+                detail = "AI credit limit reached for your plan"
+            else:
+                detail = "Generation limit reached for your plan"
+            raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail=detail)
     try:
-        return await service.generate_brand(request)
+        result = await service.generate_brand(request)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+    if current_user:
+        billing.record_generation(current_user.id, use_ai=request.use_ai)
+    return result
 
 
 @router.get("/{brand_id}", response_model=BrandResponse)
@@ -77,10 +93,18 @@ async def validate_brand(
 @router.get("/{brand_id}/export")
 async def export_brand(
     brand_id: int,
+    current_user: Optional[User] = Depends(get_current_user_optional),
     service: BrandService = Depends(get_brand_service)
 ):
     """Export a complete brand profile as JSON."""
+    if current_user:
+        billing = BillingService(service.db)
+        if not billing.can_export(current_user.id):
+            raise HTTPException(status_code=status.HTTP_402_PAYMENT_REQUIRED, detail="Export limit reached for your plan")
     try:
-        return service.export_brand(brand_id)
+        result = service.export_brand(brand_id)
     except ValueError as e:
         raise HTTPException(status_code=404, detail=str(e))
+    if current_user:
+        billing.record_export(current_user.id)
+    return result

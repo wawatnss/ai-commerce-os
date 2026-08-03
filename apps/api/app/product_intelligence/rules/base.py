@@ -27,16 +27,20 @@ class BaseRule(ABC):
     Rules should be independent and reusable across different contexts.
     """
     
-    def __init__(self, weight: float = 1.0, config: Optional[Dict[str, Any]] = None):
+    def __init__(self, weight: float = 1.0, config: Optional[Dict[str, Any]] = None, enabled: bool = True):
         """
         Initialize the rule.
         
         Args:
             weight: Weight of this rule in overall score calculation
             config: Optional configuration for the rule
+            enabled: Whether this rule should be evaluated. Disabled rules are
+                skipped entirely by ProductScoreEngine - they never run
+                `evaluate()` and never contribute to the overall score.
         """
         self.weight = weight
         self.config = config or {}
+        self.enabled = enabled
         self.rule_name = self.__class__.__name__.replace("Rule", "")
     
     @abstractmethod
@@ -70,6 +74,14 @@ class BaseRule(ABC):
         if not 0 <= weight <= 1:
             raise ValueError("Weight must be between 0 and 1")
         self.weight = weight
+    
+    def is_enabled(self) -> bool:
+        """Whether this rule should be evaluated."""
+        return self.enabled
+    
+    def set_enabled(self, enabled: bool) -> None:
+        """Enable or disable this rule."""
+        self.enabled = enabled
 
 
 class RuleError(Exception):

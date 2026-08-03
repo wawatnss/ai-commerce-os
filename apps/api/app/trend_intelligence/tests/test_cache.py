@@ -26,7 +26,7 @@ class TestTrendCache:
     @pytest.fixture
     def cache(self, mock_redis):
         """Create a TrendCache instance with mock Redis."""
-        with patch('app.trend_intelligence.cache.redis.from_url', return_value=mock_redis):
+        with patch('app.trend_intelligence.cache.redis_cache.redis.from_url', return_value=mock_redis):
             return TrendCache()
     
     def test_get_trend(self, cache, mock_redis):
@@ -77,7 +77,7 @@ class TestTrendCache:
         assert result is True
         # Should use 5 minute TTL
         call_args = mock_redis.setex.call_args
-        assert call_args[0][2] == 300
+        assert call_args[0][1] == 300
     
     def test_invalidate_trend(self, cache, mock_redis):
         """Test invalidating a specific trend."""
@@ -159,7 +159,7 @@ class TestCacheKeyGeneration:
     @pytest.fixture
     def cache(self):
         """Create a TrendCache instance."""
-        with patch('app.trend_intelligence.cache.redis.from_url'):
+        with patch('app.trend_intelligence.cache.redis_cache.redis.from_url'):
             return TrendCache()
     
     def test_make_key(self, cache):
