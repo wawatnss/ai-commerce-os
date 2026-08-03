@@ -9,7 +9,7 @@ from app.auth.models import User
 from app.auth.service import decode_token, get_user_by_email
 from database import get_db
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/login", auto_error=False)
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/v1/auth/token", auto_error=False)
 
 
 def _user_from_token(token: Optional[str], db: Session) -> Optional[User]:

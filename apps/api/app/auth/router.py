@@ -1,6 +1,7 @@
 """Authentication router."""
 
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
 from app.auth.dependencies import get_current_user
@@ -62,6 +63,27 @@ def login(data: UserLogin, db: Session = Depends(get_db)):
     user = authenticate_user(db, data)
     if not user:
         raise HTTPException(status_code=status.HTTP_401_UNAUTHORIZED, detail="Invalid credentials")
+    token = create_access_token({"sub": user.email})
+    return {"access_token": token, "token_type": "bearer"}
+
+
+@router.post("/token", response_model=Token)
+def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    """OAuth2 password-flow token endpoint (`application/x-www-form-urlencoded`
+    with `username`/`password`/`grant_type=password` fields), as required by the
+    OAuth2 spec that `OAuth2PasswordBearer` advertises. This is what Swagger
+    UI's "Authorize" button and any standard OAuth2 client call.
+
+    `username` is the account's email address. For the application's own
+    frontend, prefer `POST /login`, which accepts a JSON body instead.
+    """
+    user = get_user_by_email(db, form_data.username)
+    if not user or not verify_password(form_data.password, user.hashed_password):
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail="Invalid credentials",
+            headers={"WWW-Authenticate": "Bearer"},
+        )
     token = create_access_token({"sub": user.email})
     return {"access_token": token, "token_type": "bearer"}
 
